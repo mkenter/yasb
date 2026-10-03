@@ -78,12 +78,12 @@ nvidia_temp:
 - **tooltip_label**: Custom format string for the tooltip. Use `{data}` to reference the command output data. If not specified, shows the raw data representation (JSON for dict, string for other types).
 - **class_name**: The CSS class name for the widget.
 - **exec_options**: A dictionary specifying the execution options. The keys are:
-  - **run_cmd**: The command or executable path to run. Default is `None`.
+  - **run_cmd**: The command or executable path to run. Quote arguments that contain spaces. Default is `None`.
   - **run_once**: (boolean) If set to `true`, the command runs only once on startup and the repeat interval timer is disabled. Default is `false`.
   - **run_interval**: The repeat execution interval in milliseconds. Default is `120000` (2 minutes).
   - **return_format**: The format expected from the command output, either `"json"` or `"string"`. Default is `"json"`.
   - **hide_empty**: (boolean) If true, the widget hides itself when the output is empty or parsing fails. Default is `false`.
-  - **use_shell**: (boolean) Whether to run the command inside a system shell. Default is `true`.
+  - **use_shell**: (boolean) Whether to run the command through the Windows command shell. Default is `true`.
   - **encoding**: (string) Custom character encoding to decode the output (e.g., `utf-8`, `cp1252`). Default is `None`.
 - **callbacks**: A dictionary specifying the callbacks for mouse events. The keys are `on_left`, `on_middle`, and `on_right`, and the values are the names of the callback functions.
 

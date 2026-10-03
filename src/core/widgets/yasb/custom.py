@@ -18,7 +18,7 @@ class CustomWorker(QObject):
 
     def __init__(
         self,
-        cmd: list[str] | None,
+        cmd: str | None,
         use_shell: bool,
         encoding: str | None,
         return_type: str,
@@ -70,7 +70,7 @@ class CustomWidget(BaseWidget):
         super().__init__(config.exec_options.run_interval, class_name=f"custom-widget {config.class_name}")
         self.config = config
         self._exec_data: dict | str | None = None
-        self._exec_cmd = self.config.exec_options.run_cmd.split(" ") if self.config.exec_options.run_cmd else None
+        self._exec_cmd = self.config.exec_options.run_cmd
         self._show_alt_label = False
         self._worker = None  # Keep reference to worker for cleanup
 
